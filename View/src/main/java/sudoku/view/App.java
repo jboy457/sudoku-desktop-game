@@ -33,7 +33,7 @@ public class App extends Application {
         Parent root = loader.load();
 
         primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle("Sudoku Game");
+        primaryStage.setTitle("Sudoku Game - Adejare Taiwo");
         primaryStage.show();
         primaryStage.getIcons().add(icon);
     }

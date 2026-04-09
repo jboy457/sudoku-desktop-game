@@ -42,4 +42,12 @@ public class UniqueCheckerTest {
 
         assertTrue(UniqueChecker.checkUnique(fields));
     }
+
+    @Test
+    void testCheckUnique_PartialGroup_DuplicateDetected() {
+        SudokuField[] threeCells = {
+                new SudokuField(4), new SudokuField(4), new SudokuField(1)
+        };
+        assertFalse(UniqueChecker.checkUnique(threeCells));
+    }
 }

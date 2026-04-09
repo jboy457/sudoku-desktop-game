@@ -30,6 +30,8 @@
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Must match jOOQ codegen used for committed sources under JdbcDao/target/generated-sources/jooq -->
+        <jooq.version>3.21.1</jooq.version>
     </properties>
 
     <distributionManagement>
@@ -59,17 +61,17 @@
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq</artifactId>
-                <version>3.19.9</version>
+                <version>${jooq.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-meta</artifactId>
-                <version>3.19.9</version>
+                <version>${jooq.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen</artifactId>
-                <version>3.19.9</version>
+                <version>${jooq.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.xerial</groupId>
@@ -254,6 +256,11 @@
                     <configuration>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-codegen-maven</artifactId>
+                    <version>${jooq.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -325,7 +332,7 @@
             <plugin>
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.19.9</version>
+                <version>${jooq.version}</version>
             </plugin>
 
         </plugins>
